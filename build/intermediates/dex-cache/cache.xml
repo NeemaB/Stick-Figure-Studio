@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="c05e084b3dfdad7e1bfa10ee21a4efbfa1de5345">
+        <dex dex="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8b4b7c788aca2a9bb27853c888b0d8ed8923d9a5\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="6c592433c526d16ab89df6d0495e50dfde15a1e9">
+        <dex dex="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_1f69e904cbbd07b6891ad26f35215ca3994ab499\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_37c1bcb9b481aa67bd7a6e7d1a0e5be5a3492ed9\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\libs\processing-core.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3d3c9f05f1948fe01ff80a3a2edbb891f6c6741d">
+        <dex dex="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\transforms\dex\debug\folders\1000\2\processing-core_3ba233d3a5aa2d5cabeec94c0bdd09e1ee57128e\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\neema\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_a123fa9ee88c53c9179a52ba19247c041b1e9ac1\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_e6c0a0e59a82d29f585b5255e20231a14deecd5e\classes.dex" />
+    </item>
+
+</items>
