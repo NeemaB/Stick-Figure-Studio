@@ -1,6 +1,8 @@
 package processing.test.draw_stick_figure_anim.Activities;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
@@ -15,6 +17,7 @@ import android.content.DialogInterface;
 
 import processing.core.PApplet;
 import processing.test.draw_stick_figure_anim.Animation_Fragments.Draw_Stick_Figure_Anim;
+import processing.test.draw_stick_figure_anim.R;
 
 public class MainActivity extends Activity {
     PApplet fragment;
@@ -29,13 +32,31 @@ public class MainActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        FrameLayout frame = new FrameLayout(this);
-        frame.setId(viewId);
-        setContentView(frame, new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
+
+//        FrameLayout frame = new FrameLayout(this);
+//        frame.setId(viewId);
+        setContentView(R.layout.main_activity);
         if (savedInstanceState == null) {
+
+            Bundle arguments = new Bundle();
+
+
+            DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+            float dpHeight = displayMetrics.heightPixels;
+            float dpWidth = displayMetrics.widthPixels;
+
+            TypedValue tv = new TypedValue();
+            getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true);
+            int actionBarHeight = getResources().getDimensionPixelSize(tv.resourceId);
+
+            arguments.putFloat("width", dpWidth);
+            arguments.putFloat("height", dpHeight);
+
+
             fragment = new Draw_Stick_Figure_Anim();
+            fragment.setArguments(arguments);
             FragmentTransaction ft = getFragmentManager().beginTransaction();
-            ft.add(frame.getId(), fragment, MAIN_FRAGMENT_TAG).commit();
+            ft.add(findViewById(R.id.main_activity_frame).getId(), fragment, MAIN_FRAGMENT_TAG).commit();
         } else {
             fragment = (PApplet) getFragmentManager().findFragmentByTag(MAIN_FRAGMENT_TAG);
         }

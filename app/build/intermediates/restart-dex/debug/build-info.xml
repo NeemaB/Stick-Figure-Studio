@@ -4,29 +4,29 @@
     api-level="21"
     density="xxhdpi"
     format="7"
-    timestamp="2208033490348844" >
+    timestamp="69012714761044" >
 
     <task
         name="javac"
-        duration="118" />
+        duration="207" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="40" />
+        duration="29" />
     <task
         name="verifier"
-        duration="16" />
+        duration="5" />
 
     <artifact
         location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\outputs\apk\app-debug.apk"
         type="MAIN" />
 
-    <build timestamp="2208033490348844" >
+    <build timestamp="2278605647840841" >
         <artifact
-            location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\outputs\apk\app-debug.apk"
-            type="MAIN" />
+            location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

@@ -1,5 +1,7 @@
 package processing.test.draw_stick_figure_anim.Animation_Fragments;
 
+import android.os.Bundle;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +23,6 @@ public class Draw_Stick_Figure_Anim extends PApplet {
 
 
   public void setup(){
-
-
 
     f = createFont("sans-serif", 30, true);
 
@@ -102,8 +102,8 @@ public class Draw_Stick_Figure_Anim extends PApplet {
 
   private class AnimatedChar{
 
-    private static final int startHeight1 = 150;
-    private static final int startHeight2 = 270;
+    private static final int startHeight1 = 200;
+    private static final int startHeight2 = 320;
 
     private float velocity;
     private final float acceleration = 0.035f;
@@ -160,7 +160,14 @@ public class Draw_Stick_Figure_Anim extends PApplet {
     }
 
   }
-  public void settings() {  size(1000, 1500); }
+  public void settings() {
+
+    Bundle arguments = getArguments();
+    size((int) arguments.getFloat("width"), (int) arguments.getFloat("height"));
+//    size(1080, 1000);
+
+  }
+
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Draw_Stick_Figure_Anim" };
     if (passedArgs != null) {
