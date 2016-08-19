@@ -9,16 +9,22 @@
         android:targetSdkVersion="23" />
 
     <application
+        android:name="processing.test.draw_stick_figure_anim.Application.MyApplication"
         android:debuggable="true"
         android:icon="@drawable/icon"
-        android:label="Animation Maker" >
-        <activity android:name="processing.test.draw_stick_figure_anim.Activities.MainActivity" >
-            android:theme="@android:style/Theme.NoTitleBar">
+        android:label="Stick Figure Studio" >
+        <activity
+            android:name="processing.test.draw_stick_figure_anim.Activities.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="processing.test.draw_stick_figure_anim.Activities.MenuActivity"
+            android:label="@string/main_menu" >
         </activity>
     </application>
 

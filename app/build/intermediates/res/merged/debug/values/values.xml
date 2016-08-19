@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_menu"> Main Menu</string>
+    <style name="main_theme">
+        <item name="android:background">#FFFF00</item>
+    </style>
+</resources>

@@ -9,13 +9,22 @@
 
     <application android:debuggable="true"
         android:icon="@drawable/icon"
-        android:label="Animation Maker">
-        <activity android:name=".Activities.MainActivity">
-            android:theme="@android:style/Theme.NoTitleBar"&gt;
+        android:name=".Application.MyApplication"
+        android:label="Stick Figure Studio">
+
+        <activity android:name=".Activities.MainActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".Activities.MenuActivity"
+            android:label="@string/main_menu">
+
         </activity>
     </application>
 </manifest>

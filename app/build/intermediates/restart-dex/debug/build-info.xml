@@ -4,20 +4,20 @@
     api-level="21"
     density="xxhdpi"
     format="7"
-    timestamp="69012714761044" >
+    timestamp="762708262540279" >
 
     <task
         name="javac"
-        duration="207" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="29" />
+        duration="0" />
     <task
         name="verifier"
-        duration="5" />
+        duration="0" />
 
     <artifact
         location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\outputs\apk\app-debug.apk"

@@ -17,6 +17,7 @@ import android.content.DialogInterface;
 
 import processing.core.PApplet;
 import processing.test.draw_stick_figure_anim.Animation_Fragments.Draw_Stick_Figure_Anim;
+import processing.test.draw_stick_figure_anim.Animation_Fragments.Launch_Animation;
 import processing.test.draw_stick_figure_anim.R;
 
 public class MainActivity extends Activity {
@@ -53,7 +54,7 @@ public class MainActivity extends Activity {
             arguments.putFloat("height", dpHeight);
 
 
-            fragment = new Draw_Stick_Figure_Anim();
+            fragment = new Launch_Animation();
             fragment.setArguments(arguments);
             FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.add(findViewById(R.id.main_activity_frame).getId(), fragment, MAIN_FRAGMENT_TAG).commit();
