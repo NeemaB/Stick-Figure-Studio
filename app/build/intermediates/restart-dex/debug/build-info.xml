@@ -4,25 +4,38 @@
     api-level="21"
     density="xxhdpi"
     format="7"
-    timestamp="762708262540279" >
+    timestamp="1020590562943876"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="585" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="1237" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="91" />
     <task
         name="verifier"
-        duration="0" />
+        duration="21" />
 
     <artifact
-        location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\outputs\apk\app-debug.apk"
-        type="MAIN" />
+        location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
+    <build timestamp="1020524065235717" >
+        <artifact
+            location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\outputs\apk\app-debug.apk"
+            type="MAIN" />
+    </build>
+    <build
+        timestamp="1020590562943876"
+        verifier="COMPATIBLE" >
+        <artifact
+            location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
+    </build>
     <build timestamp="2278605647840841" >
         <artifact
             location="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\res\resources-debug.ap_"

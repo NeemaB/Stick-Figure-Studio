@@ -1,6 +1,7 @@
 package processing.test.draw_stick_figure_anim.Animation_Fragments;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import processing.core.PApplet;
@@ -131,7 +132,7 @@ public class Launch_Animation extends PApplet {
             lastTime = millis();
         }
 
-        if((millis() - startTime) > 5000){
+        if((millis() - startTime) > 8000){
             finish();
         }
 
@@ -171,6 +172,103 @@ public class Launch_Animation extends PApplet {
         line(width/9 + 60, height/9 - 100, width/9 + 72, height/9 - 80);
         line(width/9 + 60, height/9 - 100, width/9 + 62, height/9 - 76);
     }
+
+//    public void mousePressed(){
+//        noStroke();
+//        fill(0, 0, 255);
+//        ellipse(mouseX, mouseY, 30, 30);
+//    }
+//
+//    public void mouseDragged(){
+//        noStroke();
+//        fill(0, 0, 255);
+//        ellipse(mouseX, mouseY, 30, 30);
+//    }
+
+    private class StickFigure {
+
+        private List<Component> bodyParts;
+
+        private float xCenter;
+        private float yCenter;
+
+        private Spine spine;
+        private Head head;
+        private UpperArm upperArm1;
+        private UpperArm upperArm2;
+        private LowerArm lowerArm1;
+        private LowerArm lowerArm2;
+        private UpperLeg upperLeg1;
+        private UpperLeg upperLeg2;
+        private LowerLeg lowerLeg1;
+        private LowerLeg lowerLeg2;
+
+        public StickFigure(Spine spine, Head head, UpperArm upperArm1, UpperArm upperArm2,
+                           LowerArm lowerArm1, LowerArm lowerArm2, UpperLeg upperLeg1,
+                           UpperLeg upperLeg2, LowerLeg lowerLeg1, LowerLeg lowerLeg2) {
+
+            this.spine = spine;
+            this.head = head;
+            this.upperArm1 = upperArm1;
+            this.upperArm2 = upperArm2;
+            this.lowerArm1 = lowerArm1;
+            this.lowerArm2 = lowerArm2;
+            this.upperLeg1 = upperLeg1;
+            this.upperLeg2 = upperLeg2;
+            this.lowerLeg1 = lowerLeg1;
+            this.lowerLeg2 = lowerLeg2;
+
+        }
+
+    }
+
+    private class Head {
+
+    }
+
+    private class UpperArm {
+
+    }
+
+    private class LowerArm {
+
+    }
+
+    private class UpperLeg {
+
+    }
+
+    private class LowerLeg {
+
+    }
+
+
+
+    private class Component {
+
+        private float xStart;
+        private float xEnd;
+
+        private float yStart;
+        private float yEnd;
+
+        public void draw() {
+            stroke(0);
+            strokeWeight(10);
+            line(xStart, yStart, xEnd, yEnd);
+        }
+
+    }
+
+    private class Spine extends Component {
+
+        public Spine(){
+
+        }
+    }
+
+
+
 
 
     private class RotatedChar {
@@ -213,28 +311,7 @@ public class Launch_Animation extends PApplet {
         startActivity(new Intent(getActivity(), MenuActivity.class));
     }
 
-    private interface Drawable {
 
-        public void drawObject();
-
-
-    }
-
-    private class Line implements Drawable{
-
-        private float xStart;
-        private float xEnd;
-
-        private float yStart;
-        private float yEnd;
-
-        public void drawObject(){
-            line(xStart, yStart, xEnd, yEnd);
-        }
-
-
-
-    }
     public void settings() {
 
         Bundle arguments = getArguments();
