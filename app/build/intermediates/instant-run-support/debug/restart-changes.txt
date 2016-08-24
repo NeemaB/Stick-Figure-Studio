@@ -1,1 +1,0 @@
-CHANGED,C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\build\intermediates\transforms\instantRun\debug\folders\1\5\main\processing\test\draw_stick_figure_anim\Animation_Fragments\Launch_Animation.class

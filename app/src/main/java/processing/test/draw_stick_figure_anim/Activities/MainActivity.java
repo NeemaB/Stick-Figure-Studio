@@ -34,8 +34,6 @@ public class MainActivity extends Activity {
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-//        FrameLayout frame = new FrameLayout(this);
-//        frame.setId(viewId);
         setContentView(R.layout.main_activity);
         if (savedInstanceState == null) {
 
@@ -45,10 +43,6 @@ public class MainActivity extends Activity {
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
             float dpHeight = displayMetrics.heightPixels;
             float dpWidth = displayMetrics.widthPixels;
-
-            TypedValue tv = new TypedValue();
-            getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true);
-            int actionBarHeight = getResources().getDimensionPixelSize(tv.resourceId);
 
             arguments.putFloat("width", dpWidth);
             arguments.putFloat("height", dpHeight);

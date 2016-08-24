@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
+import Util.Drawer;
+import drawableObjects.StickFigure;
 import processing.core.PApplet;
 
 import processing.core.*;
@@ -31,6 +33,12 @@ import processing.test.draw_stick_figure_anim.Activities.MenuActivity;
 
 /**
  * Created by neema on 2016-08-18.
+ *
+ * This class represents the launching animation that will be shown when the user first starts
+ * the app.
+ *
+ * It showcases a logo as well as a dynamic stick figure object, the user can briefly play
+ * around with this stick figure to familiarize themselves with the mechanics of the stick figure's motion
  */
 
 
@@ -41,13 +49,19 @@ public class Launch_Animation extends PApplet {
     int startTime;
     int lastTime;
 
+    //all the Logo characters are stored in this list
     List<RotatedChar> title;
 
+    //initial setup code
     public void setup(){
 
-
+        //the characters are positioned relative to the width and height of the
+        //devices screen
         float lastXPos = width/9;
         float lastYPos = height/9 + 60;
+
+
+        //the position and rotation of all the rotated characters is set in the following block
 
         title = new ArrayList<RotatedChar>();
 
@@ -67,7 +81,6 @@ public class Launch_Animation extends PApplet {
         title.add(new RotatedChar('E', lastXPos+=102, lastYPos-=10, -0.05f));
 
 
-
         lastXPos = width/9 + 42;
 
         title.add(new RotatedChar('S', lastXPos, lastYPos+=250, -0.55f));
@@ -77,7 +90,7 @@ public class Launch_Animation extends PApplet {
         title.add(new RotatedChar('I', lastXPos+=104, lastYPos-=17, -0.14f));
         title.add(new RotatedChar('O', lastXPos+=45, lastYPos-=5, -0.10f));
 
-
+        //print all available fonts to the monitor
         String [] fonts = PFont.list();
 
         for(String s : fonts){
@@ -89,7 +102,7 @@ public class Launch_Animation extends PApplet {
 
         background(255, 255, 0);
 
-
+        //draw stick figures that appear on logo
         drawMiniStickFigures();
 
         for(RotatedChar c : title){
@@ -97,6 +110,10 @@ public class Launch_Animation extends PApplet {
         }
 
         drawLoadingText(width/2, height - 400);
+
+        StickFigure stickFigure = new StickFigure(width/2, height/2);
+        Drawer drawer = new Drawer(this);
+        drawer.drawStickFigure(stickFigure);
 
         lastTime = millis();
         startTime = millis();
@@ -184,92 +201,6 @@ public class Launch_Animation extends PApplet {
 //        fill(0, 0, 255);
 //        ellipse(mouseX, mouseY, 30, 30);
 //    }
-
-    private class StickFigure {
-
-        private List<Component> bodyParts;
-
-        private float xCenter;
-        private float yCenter;
-
-        private Spine spine;
-        private Head head;
-        private UpperArm upperArm1;
-        private UpperArm upperArm2;
-        private LowerArm lowerArm1;
-        private LowerArm lowerArm2;
-        private UpperLeg upperLeg1;
-        private UpperLeg upperLeg2;
-        private LowerLeg lowerLeg1;
-        private LowerLeg lowerLeg2;
-
-        public StickFigure(Spine spine, Head head, UpperArm upperArm1, UpperArm upperArm2,
-                           LowerArm lowerArm1, LowerArm lowerArm2, UpperLeg upperLeg1,
-                           UpperLeg upperLeg2, LowerLeg lowerLeg1, LowerLeg lowerLeg2) {
-
-            this.spine = spine;
-            this.head = head;
-            this.upperArm1 = upperArm1;
-            this.upperArm2 = upperArm2;
-            this.lowerArm1 = lowerArm1;
-            this.lowerArm2 = lowerArm2;
-            this.upperLeg1 = upperLeg1;
-            this.upperLeg2 = upperLeg2;
-            this.lowerLeg1 = lowerLeg1;
-            this.lowerLeg2 = lowerLeg2;
-
-        }
-
-    }
-
-    private class Head {
-
-    }
-
-    private class UpperArm {
-
-    }
-
-    private class LowerArm {
-
-    }
-
-    private class UpperLeg {
-
-    }
-
-    private class LowerLeg {
-
-    }
-
-
-
-    private class Component {
-
-        private float xStart;
-        private float xEnd;
-
-        private float yStart;
-        private float yEnd;
-
-        public void draw() {
-            stroke(0);
-            strokeWeight(10);
-            line(xStart, yStart, xEnd, yEnd);
-        }
-
-    }
-
-    private class Spine extends Component {
-
-        public Spine(){
-
-        }
-    }
-
-
-
-
 
     private class RotatedChar {
 

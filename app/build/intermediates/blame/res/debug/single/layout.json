@@ -1,18 +1,18 @@
 [
     {
-        "merged": "C:\\Users\\neema\\AndroidStudioProjects\\animation_maker_project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
-        "source": "C:\\Users\\neema\\AndroidStudioProjects\\animation_maker_project\\app\\src\\main\\res\\layout\\main.xml"
+        "merged": "C:\\Users\\neema boutorabi\\AndroidStudioProjects\\Stick-Figure-Studio\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_activity.xml",
+        "source": "C:\\Users\\neema boutorabi\\AndroidStudioProjects\\Stick-Figure-Studio\\app\\src\\main\\res\\layout\\menu_activity.xml"
     },
     {
-        "merged": "C:\\Users\\neema\\AndroidStudioProjects\\animation_maker_project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu_activity.xml",
-        "source": "C:\\Users\\neema\\AndroidStudioProjects\\animation_maker_project\\app\\src\\main\\res\\layout\\menu_activity.xml"
+        "merged": "C:\\Users\\neema boutorabi\\AndroidStudioProjects\\Stick-Figure-Studio\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "C:\\Users\\neema boutorabi\\AndroidStudioProjects\\Stick-Figure-Studio\\app\\src\\main\\res\\layout\\main.xml"
     },
     {
-        "merged": "C:\\Users\\neema\\AndroidStudioProjects\\animation_maker_project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_action_bar.xml",
-        "source": "C:\\Users\\neema\\AndroidStudioProjects\\animation_maker_project\\app\\src\\main\\res\\layout\\custom_action_bar.xml"
+        "merged": "C:\\Users\\neema boutorabi\\AndroidStudioProjects\\Stick-Figure-Studio\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main_activity.xml",
+        "source": "C:\\Users\\neema boutorabi\\AndroidStudioProjects\\Stick-Figure-Studio\\app\\src\\main\\res\\layout\\main_activity.xml"
     },
     {
-        "merged": "C:\\Users\\neema\\AndroidStudioProjects\\animation_maker_project\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main_activity.xml",
-        "source": "C:\\Users\\neema\\AndroidStudioProjects\\animation_maker_project\\app\\src\\main\\res\\layout\\main_activity.xml"
+        "merged": "C:\\Users\\neema boutorabi\\AndroidStudioProjects\\Stick-Figure-Studio\\app\\build\\intermediates\\res\\merged\\debug\\layout\\custom_action_bar.xml",
+        "source": "C:\\Users\\neema boutorabi\\AndroidStudioProjects\\Stick-Figure-Studio\\app\\src\\main\\res\\layout\\custom_action_bar.xml"
     }
 ]

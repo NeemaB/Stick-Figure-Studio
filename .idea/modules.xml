@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/animation_maker_project.iml" filepath="$PROJECT_DIR$/animation_maker_project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Stick-Figure-Studio.iml" filepath="$PROJECT_DIR$/Stick-Figure-Studio.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
