@@ -13,6 +13,7 @@
         android:label="Stick Figure Studio">
 
         <activity android:name=".Activities.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
 
             <intent-filter>

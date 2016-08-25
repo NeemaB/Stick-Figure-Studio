@@ -4,44 +4,37 @@
     api-level="23"
     density="xxhdpi"
     format="7"
-    timestamp="802512121419183" >
+    timestamp="888648231968500"
+    verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="166" />
     <task
         name="instant-run-dex"
-        duration="0" />
+        duration="688" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="48" />
     <task
         name="verifier"
-        duration="0" />
+        duration="3" />
 
     <artifact
-        location="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-        type="DEX" />
+        location="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\build\intermediates\reload-dex\debug\classes.dex"
+        type="RELOAD_DEX" />
 
-    <build timestamp="800743561112440" >
+    <build timestamp="888601822247717" >
         <artifact
             location="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="800995301295403" >
+    <build
+        timestamp="888648231968500"
+        verifier="COMPATIBLE" >
         <artifact
-            location="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_1\classes.dex"
-            type="DEX" />
-    </build>
-    <build timestamp="801766474430959" >
-        <artifact
-            location="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_6\classes.dex"
-            type="DEX" />
-    </build>
-    <build timestamp="802512121419183" >
-        <artifact
-            location="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_2\classes.dex"
-            type="DEX" />
+            location="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\build\intermediates\reload-dex\debug\classes.dex"
+            type="RELOAD_DEX" />
     </build>
 
 </instant-run>

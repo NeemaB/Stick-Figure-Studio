@@ -15,6 +15,7 @@
         android:label="Stick Figure Studio" >
         <activity
             android:name="processing.test.draw_stick_figure_anim.Activities.MainActivity"
+            android:screenOrientation="portrait"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

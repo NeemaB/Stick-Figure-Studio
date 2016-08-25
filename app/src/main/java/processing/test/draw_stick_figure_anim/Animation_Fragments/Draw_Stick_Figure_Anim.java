@@ -105,14 +105,14 @@ public class Draw_Stick_Figure_Anim extends PApplet {
     private static final int startHeight1 = 200;
     private static final int startHeight2 = 320;
 
-    private float velocity;
-    private final float acceleration = 0.035f;
+    private double velocity;
+    private final double acceleration = 0.035f;
 
     private final char character;
     private boolean completedAnimation = false;
 
     private int xPos;
-    private float yPos;
+    private int yPos;
     private int brightness;
 
 
@@ -163,7 +163,7 @@ public class Draw_Stick_Figure_Anim extends PApplet {
   public void settings() {
 
     Bundle arguments = getArguments();
-    size((int) arguments.getFloat("width"), (int) arguments.getFloat("height"));
+    size((int) arguments.getDouble("width"), (int) arguments.getDouble("height"));
 //    size(1080, 1000);
 
   }

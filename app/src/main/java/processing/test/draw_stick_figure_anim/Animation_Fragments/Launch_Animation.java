@@ -49,6 +49,8 @@ public class Launch_Animation extends PApplet {
     int startTime;
     int lastTime;
 
+    StickFigure stickFigure;
+
     //all the Logo characters are stored in this list
     List<RotatedChar> title;
 
@@ -57,8 +59,8 @@ public class Launch_Animation extends PApplet {
 
         //the characters are positioned relative to the width and height of the
         //devices screen
-        float lastXPos = width/9;
-        float lastYPos = height/9 + 60;
+        double lastXPos = width/9;
+        double lastYPos = height/9 + 60;
 
 
         //the position and rotation of all the rotated characters is set in the following block
@@ -109,9 +111,9 @@ public class Launch_Animation extends PApplet {
             c.drawText();
         }
 
-        drawLoadingText(width/2, height - 400);
+        drawLoadingText(width/2, (int) (height * 4.0/5.0));
 
-        StickFigure stickFigure = new StickFigure(width/2, height/2);
+        stickFigure = new StickFigure(width/2, height/2);
         Drawer drawer = new Drawer(this);
         drawer.drawStickFigure(stickFigure);
 
@@ -190,27 +192,16 @@ public class Launch_Animation extends PApplet {
         line(width/9 + 60, height/9 - 100, width/9 + 62, height/9 - 76);
     }
 
-//    public void mousePressed(){
-//        noStroke();
-//        fill(0, 0, 255);
-//        ellipse(mouseX, mouseY, 30, 30);
-//    }
-//
-//    public void mouseDragged(){
-//        noStroke();
-//        fill(0, 0, 255);
-//        ellipse(mouseX, mouseY, 30, 30);
-//    }
 
     private class RotatedChar {
 
-        private float rotation;
-        private float xPos;
-        private float yPos;
+        private double rotation;
+        private double xPos;
+        private double yPos;
 
         private char character;
 
-        public RotatedChar(char character, float xPos, float yPos, float rotation){
+        public RotatedChar(char character, double xPos, double yPos, double rotation){
 
             this.xPos = xPos;
             this.yPos = yPos;
@@ -223,8 +214,8 @@ public class Launch_Animation extends PApplet {
 
             resetMatrix();
             pushMatrix();
-            translate(this.xPos, this.yPos);
-            rotate(this.rotation);
+            translate((float) this.xPos, (float) this.yPos);
+            rotate((float) this.rotation);
 
             fill(0);
             textSize(140);
@@ -242,12 +233,19 @@ public class Launch_Animation extends PApplet {
         startActivity(new Intent(getActivity(), MenuActivity.class));
     }
 
+    public void mousePressed(){
+        if(stickFigure.wasTouched(mouseX, mouseY)){
+
+        }
+    }
+
+
 
     public void settings() {
 
         Bundle arguments = getArguments();
 
-        size((int) arguments.getFloat("width"), (int) arguments.getFloat("height"));
+        size((int) arguments.getDouble("width"), (int) arguments.getDouble("height"));
 
     }
     static public void main(String[] passedArgs) {

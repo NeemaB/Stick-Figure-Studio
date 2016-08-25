@@ -41,11 +41,11 @@ public class MainActivity extends Activity {
 
 
             DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-            float dpHeight = displayMetrics.heightPixels;
-            float dpWidth = displayMetrics.widthPixels;
+            double dpHeight = displayMetrics.heightPixels;
+            double dpWidth = displayMetrics.widthPixels;
 
-            arguments.putFloat("width", dpWidth);
-            arguments.putFloat("height", dpHeight);
+            arguments.putDouble("width", dpWidth);
+            arguments.putDouble("height", dpHeight);
 
 
             fragment = new Launch_Animation();

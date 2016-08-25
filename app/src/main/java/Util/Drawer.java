@@ -39,12 +39,12 @@ public class Drawer {
                 pApplet.stroke(0);
                 pApplet.strokeWeight(20);
                 StickFigure.LineComponent lc = (StickFigure.LineComponent) bodyParts.get(i);
-                pApplet.line(lc.getxStart(), lc.getyStart(), lc.getxEnd(), lc.getyEnd());
+                pApplet.line((int) lc.getxStart(), (int) lc.getyStart(), (int) lc.getxEnd(), (int) lc.getyEnd());
 
             }else if(bodyParts.get(i) instanceof StickFigure.Head){
 
                 StickFigure.Head h = (StickFigure.Head) bodyParts.get(i);
-                pApplet.ellipse(h.getxCenter(), h.getyCenter(), h.getSize(), h.getSize());
+                pApplet.ellipse((int) h.getxCenter(), (int) h.getyCenter(), (int) h.getSize(), (int) h.getSize());
             }
         }
 

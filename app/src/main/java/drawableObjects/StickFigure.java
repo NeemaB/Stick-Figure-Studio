@@ -18,8 +18,8 @@ public class StickFigure{
     //list of points that the user can interact with to move their stick figure
     private List<InteractivePoint> interactivePoints;
 
-    private float xCenter;
-    private float yCenter;
+    private double xCenter;
+    private double yCenter;
 
     private Head head;
     private LineComponent spine;
@@ -40,29 +40,33 @@ public class StickFigure{
 
      **/
 
-    public StickFigure(float xCenter, float yCenter) {
+    public StickFigure(double xCenter, double yCenter) {
 
         this.xCenter = xCenter;
         this.yCenter = yCenter;
 
+        //all of the stick figure dimensions will be calculated according to this value
+        double size = 350;
 
-        this.spine = new LineComponent(xCenter, yCenter - 120, xCenter, yCenter + 120);
-        this.head = new Head(xCenter, yCenter - 150, 60);
+        this.spine = new LineComponent(xCenter, yCenter - size/2 , xCenter, yCenter + size/2);
 
 
-        this.upperArm1 = new LineComponent(xCenter, yCenter - 50, xCenter + 30, yCenter - 20);
-        this.upperArm2 = new LineComponent(xCenter, yCenter - 50, xCenter - 30, yCenter - 20);
-        this.lowerArm1 = new LineComponent(upperArm1.getxEnd(), upperArm1.getyEnd(), upperArm1.getxEnd() + 30, upperArm1.getyEnd() + 30);
-        this.lowerArm2 = new LineComponent(upperArm2.getxEnd(), upperArm2.getyEnd(), upperArm2.getxEnd() - 30, upperArm2.getyEnd() + 30);
-        this.upperLeg1 = new LineComponent(xCenter, yCenter + 120, xCenter + 40, yCenter + 160);
-        this.upperLeg2 = new LineComponent(xCenter, yCenter + 120, xCenter - 40, yCenter + 160);
-        this.lowerLeg1 = new LineComponent(upperLeg1.getxEnd(), upperLeg1.getyEnd(), upperLeg1.getxEnd() + 40, upperLeg1.getyEnd() + 40);
-        this.lowerLeg2 = new LineComponent(upperLeg2.getxEnd(), upperLeg2.getyEnd(), upperLeg2.getxEnd() -40, upperLeg2.getyEnd() + 40);
+        this.head = new Head(xCenter, yCenter - (size / 2 + size / 7.5), size / 3.75);
+
+
+        this.upperArm1 = new LineComponent(xCenter, yCenter - size/6 , xCenter + size/6 , yCenter);
+        this.upperArm2 = new LineComponent(xCenter, yCenter - size/6, xCenter - size/6, yCenter);
+        this.lowerArm1 = new LineComponent(upperArm1.getxEnd(), upperArm1.getyEnd(), upperArm1.getxEnd() + size/6, upperArm1.getyEnd() + size/6);
+        this.lowerArm2 = new LineComponent(upperArm2.getxEnd(), upperArm2.getyEnd(), upperArm2.getxEnd() - size/6, upperArm2.getyEnd() + size/6);
+        this.upperLeg1 = new LineComponent(xCenter, yCenter + size/2, xCenter + size/5.45, yCenter + size/1.46);
+        this.upperLeg2 = new LineComponent(xCenter, yCenter + size/2, xCenter - size/5.45, yCenter + size/1.46);
+        this.lowerLeg1 = new LineComponent(upperLeg1.getxEnd(), upperLeg1.getyEnd(), upperLeg1.getxEnd() + size/5.45, upperLeg1.getyEnd() + size/5.45);
+        this.lowerLeg2 = new LineComponent(upperLeg2.getxEnd(), upperLeg2.getyEnd(), upperLeg2.getxEnd() - size/5.45, upperLeg2.getyEnd() + size/5.45);
 
         bodyParts = new ArrayList<BodyPart>();
         interactivePoints = new ArrayList<InteractivePoint>();
 
-        //the order in which these objects are added matters since we will draw them in that order
+        //the order in which these objects are added matters since some of their dimensions depend on oneanother
 
         bodyParts.add(spine);
         bodyParts.add(head);
@@ -82,8 +86,22 @@ public class StickFigure{
         return this.bodyParts;
     }
 
+    public boolean wasTouched(int mouseX, int mouseY){
+
+        for(BodyPart bp : bodyParts){
+            if(bp.wasTouched(mouseX, mouseY)){
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
     //All body parts implement this interface, this is mainly here for code readability
     public interface BodyPart {
+
+       public boolean wasTouched(int mouseX, int mouseY);
 
     }
 
@@ -91,60 +109,73 @@ public class StickFigure{
     //e.g arms and legs
     public static class LineComponent implements BodyPart {
 
-        private float xStart;
-        private float xEnd;
+        private double xStart;
+        private double xEnd;
 
-        private float yStart;
-        private float yEnd;
+        private double yStart;
+        private double yEnd;
 
-        public LineComponent(float xStart, float yStart, float xEnd, float yEnd){
+        public LineComponent(double xStart, double yStart, double xEnd, double yEnd){
             this.xStart = xStart;
             this.yStart = yStart;
             this.xEnd = xEnd;
             this.yEnd = yEnd;
         }
 
-        public float getxStart() {
+        @Override
+        public boolean wasTouched(int mouseX, int mouseY){
+
+            
+        }
+
+        public double getSize(){
+
+            return (double) Math.sqrt(Math.pow(xEnd - xStart, 2) + Math.pow(yEnd - yStart, 2));
+        }
+
+        public double getxStart() {
             return this.xStart;
         }
 
-        public float getyStart() {
+        public double getyStart() {
             return this.yStart;
         }
 
-        public float getxEnd() {
+        public double getxEnd() {
             return this.xEnd;
         }
 
-        public float getyEnd() {
+        public double getyEnd() {
             return this.yEnd;
         }
+
+
 
     }
 
 
     public static class Head implements BodyPart  {
 
-        float xCenter;
-        float yCenter;
-        float size;
+        double xCenter;
+        double yCenter;
+        double size;
 
-        public Head (float xCenter, float yCenter, float size){
+        public Head (double xCenter, double yCenter, double size){
 
             this.xCenter = xCenter;
             this.yCenter = yCenter;
             this.size = size;
         }
 
-        public float getxCenter(){
+        public double getxCenter(){
             return xCenter;
         }
 
-        public float getyCenter(){
+        public double getyCenter(){
             return yCenter;
         }
 
-        public float getSize(){
+        public double getSize(){
             return size;
         }
 
@@ -153,11 +184,11 @@ public class StickFigure{
 
     private static class InteractivePoint {
 
-        float xCenter;
-        float yCenter;
-        float size;
+        double xCenter;
+        double yCenter;
+        double size;
 
-        public InteractivePoint(float xCenter, float yCenter, float size){
+        public InteractivePoint(double xCenter, double yCenter, double size){
             this.xCenter = xCenter;
             this.yCenter = yCenter;
             this.size = size;
