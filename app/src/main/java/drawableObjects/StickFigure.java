@@ -1,8 +1,9 @@
-package drawableObjects;
+package DrawableObjects;
 
 import java.util.ArrayList;
 import java.util.List;
-import processing.core.PApplet;
+
+import Util.MathUtil;
 
 /**
  * Created by neema boutorabi on 2016-08-23.
@@ -66,7 +67,7 @@ public class StickFigure{
         bodyParts = new ArrayList<BodyPart>();
         interactivePoints = new ArrayList<InteractivePoint>();
 
-        //the order in which these objects are added matters since some of their dimensions depend on oneanother
+        //the order in which these objects are added matters since some of their dimensions depend on one another
 
         bodyParts.add(spine);
         bodyParts.add(head);
@@ -86,8 +87,21 @@ public class StickFigure{
         return this.bodyParts;
     }
 
+    /**
+     * This method is called when the user touches the screen, the return value represents whether the user
+     * clicked on the stick figure or not
+     *
+     *
+     * @param mouseX
+     *              The x position of the touch event
+     * @param mouseY
+     *              The y position of the touch event
+     *
+     *
+     */
     public boolean wasTouched(int mouseX, int mouseY){
 
+        //iterate through all body parts and check if any of them were touched
         for(BodyPart bp : bodyParts){
             if(bp.wasTouched(mouseX, mouseY)){
                 return true;
@@ -125,12 +139,16 @@ public class StickFigure{
         @Override
         public boolean wasTouched(int mouseX, int mouseY){
 
-            
-        }
+            //get the shortest distance from the point to this line segment
+            double distance = MathUtil.shortestDistanceToLine(xStart, xEnd, yStart, yEnd, mouseX, mouseY);
 
-        public double getSize(){
+            //check if distance is below threshold
+            if(distance <= 40){
+                return true;
+            }else {
 
-            return (double) Math.sqrt(Math.pow(xEnd - xStart, 2) + Math.pow(yEnd - yStart, 2));
+                return false;
+            }
         }
 
         public double getxStart() {
@@ -153,7 +171,7 @@ public class StickFigure{
 
     }
 
-
+    //This represents the stick figures head
     public static class Head implements BodyPart  {
 
         double xCenter;
@@ -179,9 +197,22 @@ public class StickFigure{
             return size;
         }
 
+        public boolean wasTouched(int mouseX, int mouseY){
+
+            //get radial distance from center of head to point of touch event
+            double distance = MathUtil.getDistance(xCenter, yCenter, mouseX, mouseY);
+
+            //take away radius of head and check if remaining distance is below threshold
+            if((distance - size/2) < 20){
+                return true;
+            }else {
+                return false;
+            }
+        }
+
     }
 
-
+    //represents a point of interaction that allows the user to move parts of the stick figure
     private static class InteractivePoint {
 
         double xCenter;

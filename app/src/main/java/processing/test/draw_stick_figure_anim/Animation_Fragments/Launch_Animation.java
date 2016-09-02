@@ -1,33 +1,16 @@
 package processing.test.draw_stick_figure_anim.Animation_Fragments;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import Util.Drawer;
-import drawableObjects.StickFigure;
+import DrawableObjects.StickFigure;
 import processing.core.PApplet;
 
-import processing.core.*;
-import processing.data.*;
-import processing.event.*;
-import processing.opengl.*;
-
-import java.util.*;
-
-import java.util.HashMap;
 import java.util.ArrayList;
-import java.io.File;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.IOException;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import processing.core.PApplet;
 import processing.core.PFont;
 import processing.test.draw_stick_figure_anim.Activities.MenuActivity;
 
@@ -45,11 +28,14 @@ import processing.test.draw_stick_figure_anim.Activities.MenuActivity;
 
 public class Launch_Animation extends PApplet {
 
-    PFont f;
-    int startTime;
-    int lastTime;
+    private PFont f;
+    private int startTime;
+    private int lastTime;
+    private int hitCounter = 0;
 
-    StickFigure stickFigure;
+    private Drawer drawer;
+    private Drawer.ColorVector background;
+    private StickFigure stickFigure;
 
     //all the Logo characters are stored in this list
     List<RotatedChar> title;
@@ -102,7 +88,8 @@ public class Launch_Animation extends PApplet {
         f = createFont("Serif-Bold", 28);
         textFont(f);
 
-        background(255, 255, 0);
+        background = new Drawer.ColorVector(255, 255, 0);
+        background(background.R(), background.G(), background.B());
 
         //draw stick figures that appear on logo
         drawMiniStickFigures();
@@ -114,7 +101,7 @@ public class Launch_Animation extends PApplet {
         drawLoadingText(width/2, (int) (height * 4.0/5.0));
 
         stickFigure = new StickFigure(width/2, height/2);
-        Drawer drawer = new Drawer(this);
+        drawer = new Drawer(this);
         drawer.drawStickFigure(stickFigure);
 
         lastTime = millis();
@@ -123,7 +110,7 @@ public class Launch_Animation extends PApplet {
 
 
     }
-
+    //main draw loop
     public void draw(){
 
 
@@ -167,7 +154,7 @@ public class Launch_Animation extends PApplet {
         text("Loading", xPos, yPos + 100);
 
     }
-
+    //draw mini stick figures that appear on top of logo text
     public void drawMiniStickFigures(){
 
         fill(0);
@@ -228,6 +215,7 @@ public class Launch_Animation extends PApplet {
 
     }
 
+    //start menu activity
     private void finish(){
         getActivity().finish();
         startActivity(new Intent(getActivity(), MenuActivity.class));
@@ -236,8 +224,11 @@ public class Launch_Animation extends PApplet {
     public void mousePressed(){
         if(stickFigure.wasTouched(mouseX, mouseY)){
 
+
         }
     }
+
+
 
 
 

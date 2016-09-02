@@ -15,7 +15,7 @@ public class MyApplication extends Application {
     public void onCreate(){
         super.onCreate();
 
-
+        //initialize Iconify module for use in app
         Iconify.
                 with(new FontAwesomeModule());
     }

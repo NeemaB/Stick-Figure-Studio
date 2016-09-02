@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //make window full screen (remove notifications bar)
         Window window = getWindow();
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
@@ -37,6 +38,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.main_activity);
         if (savedInstanceState == null) {
 
+            //pass width and height of screen as arguments to launch animation
             Bundle arguments = new Bundle();
 
 
@@ -47,7 +49,7 @@ public class MainActivity extends Activity {
             arguments.putDouble("width", dpWidth);
             arguments.putDouble("height", dpHeight);
 
-
+            //attach animation fragment
             fragment = new Launch_Animation();
             fragment.setArguments(arguments);
             FragmentTransaction ft = getFragmentManager().beginTransaction();

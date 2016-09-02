@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Users\neema boutorabi\AndroidStudioProjects\Stick-Figure-Studio\app\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Users\neema\AndroidStudioProjects\animation_maker_project\app\src\debug\jniLibs"/></dataSet></merger>

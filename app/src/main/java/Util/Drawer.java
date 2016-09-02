@@ -1,10 +1,8 @@
 package Util;
 
-import android.support.annotation.Nullable;
-
 import java.util.ArrayList;
 
-import drawableObjects.StickFigure;
+import DrawableObjects.StickFigure;
 import processing.core.PApplet;
 
 /**
@@ -51,6 +49,43 @@ public class Drawer {
 
     }
 
+    public void clearRegion(double x1, double x2, double y1, double y2, ColorVector cv ){
 
+        pApplet.fill(cv.R(), cv.G(), cv.B());
+        pApplet.noStroke();
+        pApplet.rect((float) x1, (float) y1, (float) x2, (float) y2);
+
+    }
+
+
+    public static class ColorVector {
+        private int R;
+        private int G;
+        private int B;
+
+        public ColorVector(int R, int G, int B){
+            this.R = R;
+            this.G = G;
+            this.B = B;
+        }
+
+        public ColorVector(int val){
+            this.R = val;
+            this.G = val;
+            this.B = val;
+        }
+
+        public int R(){
+            return R;
+        }
+
+        public int G(){
+            return G;
+        }
+
+        public int B(){
+            return B;
+        }
+    }
 
 }
